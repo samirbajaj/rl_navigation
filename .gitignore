@@ -1,0 +1,6 @@
+*.log
+*.ipynb
+.idea
+.ipynb_checkpoints
+Banana_Linux
+__pycache__
