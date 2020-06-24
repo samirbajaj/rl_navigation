@@ -11,8 +11,7 @@ from unityagents import UnityEnvironment
 from dqn_agent import Agent
 
 
-def create_env(
-        file_name="/home/samir/projects/rl/deep-reinforcement-learning/p1_navigation/Banana_Linux/Banana.x86_64"):
+def create_env(file_name="Banana_Linux/Banana.x86_64"):
     env = UnityEnvironment(file_name=file_name)
 
     # get the default brain
