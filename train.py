@@ -1,5 +1,6 @@
 from collections import deque
 import argparse
+import os
 import matplotlib
 # pip install PyQt5
 matplotlib.use('qt5agg')
@@ -100,11 +101,12 @@ if __name__ == '__main__':
     env, brain_name, state_size, action_size = create_env()
     agent = Agent(state_size=state_size, action_size=action_size, seed=0)
     if args.train:
+        if os.path.exists(argsdict['weights']):
+            raise Exception(f"Cannot overwrite parameters file {argsdict['weights']}")
         print(f"Commencing training loop...parameters will be saved in {argsdict['weights']}...")
         scores = train_dqn(agent, env)
         plot_scores(scores)
     else:
-        import os
         if not (os.path.isfile(argsdict['weights']) and os.access(argsdict['weights'], os.R_OK)):
             raise Exception(f"Cannot access parameters from {argsdict['weights']}")
         print(f"Running pre-trained agent using parameters from {argsdict['weights']}...")
