@@ -22,15 +22,57 @@ The task is episodic, and in order to solve the environment, the agent must get 
 
 ### Getting Started
 
-This agent was trained on a Linux machine running Ubuntu 18.04. The `requirements.txt` file contains the complete list of Python modules needed to run this code.
+The solution was developed in Python 3.6.9 on a Linux machine running Ubuntu 18.04. The `requirements.txt` file contains the complete list of Python modules needed to run this code.
 
 Additionally, [the corresponding environment for Linux](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip) should be downloaded and decompressed in the working directory. 
 
-### Q Network
+### Training the Agent
 
+The `train.py` script offers a help message:
+```commandline
+$ python train.py -h
+usage: train.py [-h] [--train] [--weights WEIGHTS]
 
-### Agent
+Navigation - Udacity Reinforcement Learning Nanodegree.
 
+optional arguments:
+  -h, --help         show this help message and exit
+  --train            train the Q network
+  --weights WEIGHTS  path to file containing the neural network parameters
+``` 
+The script can be run in two modes, depending on whether the `--train` argument has been specified.
 
-### Training Loop
+To train the agent, simply invoke the script with the `--train` argument. Doing so will start the training loop that runs until the desired minimum average score is recorded, or 2,000 training episodes have been completed. If an average score of +13 over 100 consecutive episodes is obtained, training stops and model parameters are written to disk. The default filename for the model parameters is `checkpoint.pth`.
+
+A file with the saved model weights of the successful agent, `model.pt`, is available. It can be used to create and run a pre-trained agent as follows:
+```commandline
+$ python train.py --weights model.pt
+Found path: /home/samir/projects/rl/deep-reinforcement-learning/p1_solution/Banana_Linux/Banana.x86_64
+Mono path[0] = '/home/samir/projects/rl/deep-reinforcement-learning/p1_solution/Banana_Linux/Banana_Data/Managed'
+Mono config path = '/home/samir/projects/rl/deep-reinforcement-learning/p1_solution/Banana_Linux/Banana_Data/MonoBleedingEdge/etc'
+Preloaded 'ScreenSelector.so'
+Preloaded 'libgrpc_csharp_ext.x64.so'
+Unable to preload the following plugins:
+	ScreenSelector.so
+	libgrpc_csharp_ext.x86.so
+Logging to /home/samir/.config/unity3d/Unity Technologies/Unity Environment/Player.log
+INFO:unityagents:
+'Academy' started successfully!
+Unity Academy name: Academy
+        Number of Brains: 1
+        Number of External Brains : 1
+        Lesson number : 0
+        Reset Parameters :
+		
+Unity brain name: BananaBrain
+        Number of Visual Observations (per agent): 0
+        Vector Observation space type: continuous
+        Vector Observation space size (per agent): 37
+        Number of stacked Vector Observation: 1
+        Vector Action space type: discrete
+        Vector Action space size (per agent): 4
+        Vector Action descriptions: , , , 
+Running pre-trained agent using parameters from model.pt...
+Score: 17.0
+```
 
