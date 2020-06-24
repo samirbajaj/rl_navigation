@@ -22,9 +22,9 @@ The task is episodic, and in order to solve the environment, the agent must get 
 
 ### Getting Started
 
-The solution was developed in Python 3.6.9 on a Linux machine running Ubuntu 18.04. The `requirements.txt` file contains the complete list of Python modules needed to run this code.
+The solution was developed in Python 3.6.9 on a Linux machine running Ubuntu 18.04. Instructions for setting up the required Python modules are available [here](https://github.com/udacity/deep-reinforcement-learning#dependencies). 
 
-Additionally, [the corresponding environment for Linux](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip) should be downloaded and decompressed in the working directory. 
+Additionally, [the corresponding Unity environment for Linux](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip) should be downloaded and decompressed in the working directory. 
 
 ### Training the Agent
 
