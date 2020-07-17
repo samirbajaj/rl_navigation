@@ -127,4 +127,4 @@ if __name__ == '__main__':
                 break
 
         print("Score: {}".format(score))
-        env.close()
+    env.close()
